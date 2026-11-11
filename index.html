@@ -3014,7 +3014,7 @@ a.pj2:hover .pj2-media.card img{transform:rotate(-1deg) translateY(-6px)}
         </details>
         <details class="xp-row">
           <summary><span class="xp-co">ByteDance · Helo</span><span class="xp-role">Community specialist</span><span class="xp-yr">2020 — 21</span><span class="xp-plus" aria-hidden="true"></span></summary>
-          <div class="xp-body"><span class="xp-role-m">Community specialist</span><ul><li>Owned UX and content for the Helo app’s Hindi module</li><li>Grew official accounts to <b>1 lakh</b> likes with 300+ posts</li><li>Ran UGC campaigns with 500+ participants and 10,000+ interactions</li><li>Increased visibility for 20 journalists by managing their accounts</li></ul></div>
+          <div class="xp-body"><span class="xp-role-m">Community specialist</span><ul><li>Handled UX and content for the Helo app</li><li>Grew official accounts to <b>1 lakh</b> likes with 300+ posts</li><li>Ran UGC campaigns with 500+ participants and 10,000+ interactions</li><li>Increased visibility for 20 journalists by managing their accounts</li></ul></div>
         </details>
         <details class="xp-row">
           <summary><span class="xp-co">Roar</span><span class="xp-role">Content writer</span><span class="xp-yr">2017 — 20</span><span class="xp-plus" aria-hidden="true"></span></summary>
@@ -4320,7 +4320,7 @@ a.pj2:hover .pj2-media.card img{transform:rotate(-1deg) translateY(-6px)}
   var CV='Vimal-Naugain-Resume.pdf', dl=null;
   try{ Promise.resolve(window.claude&&window.claude.use?window.claude.use('downloads'):null).then(function(d){ dl=d||null; },function(){}); }catch(e){}
   makeMenu({id:'resumeMenu',triggers:[].slice.call(document.querySelectorAll('a[href="'+CV+'"]')),items:[
-    {icon:'view',label:'View resume',href:CV,blank:true},
+    {icon:'view',label:'View resume',href:'resume.html',blank:true},
     {icon:'down',label:'Download resume',run:function(){
       if(dl){ return fetch(CV).then(function(r){ if(!r.ok) throw 0; return r.blob(); }).then(function(b){ return dl.save({filename:CV,data:b}); }).then(function(){ return 'Saved'; },function(e){ if(e&&e.code==='declined') return false; window.open(CV,'_blank','noopener'); return false; }); }
       var a=document.createElement('a'); a.href=CV; a.download=CV; document.body.appendChild(a); a.click(); a.remove(); return 'Downloading';
