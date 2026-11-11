@@ -2836,14 +2836,14 @@ a.pj2:hover .pj2-media.card img{transform:rotate(-1deg) translateY(-6px)}
 @media (max-width:720px){.xp-note{margin:0 0 8px}}
 
 /* Email menu: copy or open */
-#emailMenu{position:fixed;z-index:200;min-width:216px;padding:6px;border-radius:16px;background:#fffdf8;border:1px solid rgba(60,50,30,.16);box-shadow:0 22px 44px -22px rgba(30,25,10,.45),0 2px 6px rgba(30,25,10,.08);opacity:0;transform:translateY(-4px) scale(.98);transform-origin:top center;transition:opacity .16s ease,transform .2s cubic-bezier(.2,.8,.2,1)}
-#emailMenu.in{opacity:1;transform:none}
-#emailMenu[hidden]{display:none}
-#emailMenu button,#emailMenu a{display:flex;align-items:center;gap:12px;width:100%;min-height:44px;padding:0 14px;border:0;border-radius:11px;background:none;color:#1d1b16;font-size:.95rem;font-weight:600;line-height:1;font-family:inherit;text-align:left;text-decoration:none;cursor:pointer;transition:background .15s}
-#emailMenu button:hover,#emailMenu a:hover,#emailMenu button:focus-visible,#emailMenu a:focus-visible{background:#f1ead9;outline:none}
-#emailMenu svg{width:18px;height:18px;flex:none}
-#emailMenu button.ok{color:#1f6e40}
-@media (prefers-reduced-motion:reduce){#emailMenu{transition:none}}
+.cta-menu{position:fixed;z-index:200;min-width:216px;padding:6px;border-radius:16px;background:#fffdf8;border:1px solid rgba(60,50,30,.16);box-shadow:0 22px 44px -22px rgba(30,25,10,.45),0 2px 6px rgba(30,25,10,.08);opacity:0;transform:translateY(-4px) scale(.98);transform-origin:top center;transition:opacity .16s ease,transform .2s cubic-bezier(.2,.8,.2,1)}
+.cta-menu.in{opacity:1;transform:none}
+.cta-menu[hidden]{display:none}
+.cta-menu button,.cta-menu a{display:flex;align-items:center;gap:12px;width:100%;min-height:44px;padding:0 14px;border:0;border-radius:11px;background:none;color:#1d1b16;font-size:.95rem;font-weight:600;line-height:1;font-family:inherit;text-align:left;text-decoration:none;cursor:pointer;transition:background .15s}
+.cta-menu button:hover,.cta-menu a:hover,.cta-menu button:focus-visible,.cta-menu a:focus-visible{background:#f1ead9;outline:none}
+.cta-menu svg{width:18px;height:18px;flex:none}
+.cta-menu button.ok{color:#1f6e40}
+@media (prefers-reduced-motion:reduce){.cta-menu{transition:none}}
 </style>
 
 <div class="page">
@@ -4259,47 +4259,73 @@ a.pj2:hover .pj2-media.card img{transform:rotate(-1deg) translateY(-6px)}
   setTimeout(function(){step(0)},1800);
 })();
 (function(){
-  /* Email: either email button opens a small menu with two choices, copy the address or open an email. */
-  var ADDR='vimalnaugain2@gmail.com', menu=document.createElement('div'), openFor=null, timer=null;
-  menu.id='emailMenu'; menu.setAttribute('role','menu'); menu.hidden=true;
-  menu.innerHTML='<button type="button" role="menuitem" data-a="copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 0 1 7.5 4H16"/></svg><span>Copy email address</span></button><a role="menuitem" data-a="open" href="mailto:'+ADDR+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg><span>Open email</span></a>';
-  document.body.appendChild(menu);
-  var copyBtn=menu.querySelector('[data-a="copy"]'), copyLbl=copyBtn.querySelector('span');
-  function place(t){
-    var r=t.getBoundingClientRect(), w=menu.offsetWidth, h=menu.offsetHeight, vw=document.documentElement.clientWidth, vh=window.innerHeight;
-    var x=Math.min(Math.max(12,r.left+r.width/2-w/2),vw-w-12);
-    var y=r.bottom+8; if(y+h>vh-12) y=Math.max(12,r.top-h-8);
-    menu.style.left=x+'px'; menu.style.top=y+'px';
+  /* CTA menus: a small popover with two choices. Used by the email buttons and the resume buttons. */
+  var ICO={
+    copy:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 0 1 7.5 4H16"/></svg>',
+    mail:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>',
+    view:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.8"/></svg>',
+    down:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>'
+  };
+  function makeMenu(cfg){
+    var menu=document.createElement('div'), openFor=null, timer=null, els=[];
+    menu.className='cta-menu'; menu.id=cfg.id; menu.setAttribute('role','menu'); menu.hidden=true;
+    cfg.items.forEach(function(it){
+      var el=document.createElement(it.href?'a':'button'); el.setAttribute('role','menuitem');
+      if(it.href){ el.href=it.href; if(it.blank){ el.target='_blank'; el.rel='noopener'; } } else el.type='button';
+      el.innerHTML=ICO[it.icon]+'<span>'+it.label+'</span>'; menu.appendChild(el); els.push(el);
+      if(it.href) el.addEventListener('click',function(){ setTimeout(function(){ close(false); },50); });
+      else el.addEventListener('click',function(){
+        var lbl=el.querySelector('span'); Promise.resolve(it.run()).then(function(msg){
+          if(!msg){ close(false); return; }
+          el.classList.add('ok'); lbl.textContent=msg; clearTimeout(timer); timer=setTimeout(function(){ close(true); },msg==='Copied'||msg==='Saved'?900:1800);
+        });
+      });
+    });
+    document.body.appendChild(menu);
+    function place(t){
+      var r=t.getBoundingClientRect(), w=menu.offsetWidth, h=menu.offsetHeight, vw=document.documentElement.clientWidth, vh=window.innerHeight;
+      var x=Math.min(Math.max(12,r.left+r.width/2-w/2),vw-w-12), y=r.bottom+8; if(y+h>vh-12) y=Math.max(12,r.top-h-8);
+      menu.style.left=x+'px'; menu.style.top=y+'px';
+    }
+    function close(back){ if(menu.hidden) return; menu.classList.remove('in'); clearTimeout(timer); var t=openFor; openFor=null; if(t) t.setAttribute('aria-expanded','false'); setTimeout(function(){ if(!openFor) menu.hidden=true; },160); if(back&&t) t.focus({preventScroll:true}); }
+    function show(t){
+      if(openFor===t){ close(true); return; }
+      document.dispatchEvent(new CustomEvent('ctamenu',{detail:menu}));
+      openFor=t; els.forEach(function(el,i){ el.classList.remove('ok'); el.querySelector('span').textContent=cfg.items[i].label; });
+      menu.hidden=false; place(t); t.setAttribute('aria-expanded','true');
+      requestAnimationFrame(function(){ menu.classList.add('in'); }); els[0].focus({preventScroll:true});
+    }
+    cfg.triggers.forEach(function(t){ if(!t) return; t.setAttribute('aria-expanded','false'); t.setAttribute('aria-haspopup','menu');
+      t.addEventListener('click',function(ev){ ev.preventDefault(); show(t); }); });
+    document.addEventListener('ctamenu',function(ev){ if(ev.detail!==menu) close(false); });
+    document.addEventListener('click',function(ev){ if(menu.hidden||menu.contains(ev.target)||(openFor&&openFor.contains(ev.target))) return; close(false); });
+    document.addEventListener('keydown',function(ev){ if(menu.hidden) return;
+      if(ev.key==='Escape') close(true);
+      else if(ev.key==='ArrowDown'||ev.key==='ArrowUp'){ ev.preventDefault(); var i=els.indexOf(document.activeElement); els[(i+(ev.key==='ArrowDown'?1:-1)+els.length)%els.length].focus(); } });
+    window.addEventListener('scroll',function(){ if(openFor) place(openFor); },{passive:true});
+    window.addEventListener('resize',function(){ if(openFor) place(openFor); });
+    window.addEventListener('hashchange',function(){ close(false); });
   }
-  function close(back){ if(menu.hidden) return; menu.classList.remove('in'); clearTimeout(timer); var t=openFor; openFor=null; if(t) t.setAttribute('aria-expanded','false'); setTimeout(function(){ if(!openFor) menu.hidden=true; },160); if(back&&t) t.focus(); }
-  function show(t){
-    if(openFor===t){ close(true); return; }
-    openFor=t; copyLbl.textContent='Copy email address'; copyBtn.classList.remove('ok');
-    menu.hidden=false; place(t); t.setAttribute('aria-expanded','true');
-    requestAnimationFrame(function(){ menu.classList.add('in'); }); copyBtn.focus({preventScroll:true});
-  }
-  [document.getElementById('emailIcon'),document.getElementById('copy')].forEach(function(t){
-    if(!t) return; t.setAttribute('aria-expanded','false');
-    t.addEventListener('click',function(ev){ ev.preventDefault(); show(t); });
-  });
-  var label=document.getElementById('email'), orig=label?label.textContent:'';
-  function copied(ok){
-    copyBtn.classList.add('ok'); copyLbl.textContent=ok?'Copied':'Selected, press copy';
-    if(label){ label.textContent=ok?'Copied':orig; setTimeout(function(){ label.textContent=orig; },1600); }
-    timer=setTimeout(function(){ close(true); },ok?900:1800);
-  }
-  copyBtn.addEventListener('click',function(){
-    var fallback=function(){ try{ var r=document.createRange(); r.selectNodeContents(label||document.body); var sel=getSelection(); sel.removeAllRanges(); sel.addRange(r); }catch(e){} copied(false); };
-    try{ navigator.clipboard.writeText(ADDR).then(function(){ copied(true); },fallback); }catch(e){ fallback(); }
-  });
-  menu.querySelector('[data-a="open"]').addEventListener('click',function(){ setTimeout(function(){ close(false); },50); });
-  document.addEventListener('click',function(ev){ if(menu.hidden||menu.contains(ev.target)||(openFor&&openFor.contains(ev.target))) return; close(false); });
-  document.addEventListener('keydown',function(ev){ if(menu.hidden) return;
-    if(ev.key==='Escape'){ close(true); }
-    else if(ev.key==='ArrowDown'||ev.key==='ArrowUp'){ ev.preventDefault(); var it=[copyBtn,menu.querySelector('[data-a="open"]')], i=it.indexOf(document.activeElement); it[(i+(ev.key==='ArrowDown'?1:-1)+2)%2].focus(); } });
-  window.addEventListener('scroll',function(){ if(openFor) place(openFor); },{passive:true});
-  window.addEventListener('resize',function(){ if(openFor) place(openFor); });
-  window.addEventListener('hashchange',function(){ close(false); });
+  /* email */
+  var ADDR='vimalnaugain2@gmail.com', label=document.getElementById('email'), orig=label?label.textContent:'';
+  makeMenu({id:'emailMenu',triggers:[document.getElementById('emailIcon'),document.getElementById('copy')],items:[
+    {icon:'copy',label:'Copy email address',run:function(){
+      function flash(t){ if(label){ label.textContent=t; setTimeout(function(){ label.textContent=orig; },1600); } }
+      var fallback=function(){ try{ var r=document.createRange(); r.selectNodeContents(label||document.body); var sel=getSelection(); sel.removeAllRanges(); sel.addRange(r); }catch(e){} return 'Selected, press copy'; };
+      try{ return navigator.clipboard.writeText(ADDR).then(function(){ flash('Copied'); return 'Copied'; },fallback); }catch(e){ return fallback(); }
+    }},
+    {icon:'mail',label:'Open email',href:'mailto:'+ADDR}
+  ]});
+  /* resume */
+  var CV='Vimal-Naugain-Resume.pdf', dl=null;
+  try{ Promise.resolve(window.claude&&window.claude.use?window.claude.use('downloads'):null).then(function(d){ dl=d||null; },function(){}); }catch(e){}
+  makeMenu({id:'resumeMenu',triggers:[].slice.call(document.querySelectorAll('a[href="'+CV+'"]')),items:[
+    {icon:'view',label:'View resume',href:CV,blank:true},
+    {icon:'down',label:'Download resume',run:function(){
+      if(dl){ return fetch(CV).then(function(r){ if(!r.ok) throw 0; return r.blob(); }).then(function(b){ return dl.save({filename:CV,data:b}); }).then(function(){ return 'Saved'; },function(e){ if(e&&e.code==='declined') return false; window.open(CV,'_blank','noopener'); return false; }); }
+      var a=document.createElement('a'); a.href=CV; a.download=CV; document.body.appendChild(a); a.click(); a.remove(); return 'Downloading';
+    }}
+  ]});
 })();
 </script>
 <script>
@@ -4449,21 +4475,3 @@ a.pj2:hover .pj2-media.card img{transform:rotate(-1deg) translateY(-6px)}
 
 
 </body></html>
-
-<script>
-/* Resume download: the artifact viewer blocks plain download links, so save through the downloads capability. */
-(function(){
-  var SEL='a[href="Vimal-Naugain-Resume.pdf"]', dl=null, tried=false;
-  function get(){ if(tried) return Promise.resolve(dl); tried=true;
-    try{ return Promise.resolve(window.claude&&window.claude.use?window.claude.use('downloads'):null).then(function(d){ dl=d||null; return dl; },function(){ return null; }); }catch(e){ return Promise.resolve(null); } }
-  get();
-  document.addEventListener('click',function(ev){
-    var a=ev.target.closest&&ev.target.closest(SEL); if(!a) return;
-    if(!dl) return; /* no capability here: fall back to the plain link */
-    ev.preventDefault();
-    fetch('Vimal-Naugain-Resume.pdf').then(function(r){ if(!r.ok) throw 0; return r.blob(); })
-      .then(function(b){ return dl.save({filename:'Vimal-Naugain-Resume.pdf',data:b}); })
-      .catch(function(e){ if(e&&e.code==='declined') return; window.open('Vimal-Naugain-Resume.pdf','_blank','noopener'); });
-  });
-})();
-</script>
