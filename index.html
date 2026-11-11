@@ -4320,7 +4320,7 @@ a.pj2:hover .pj2-media.card img{transform:rotate(-1deg) translateY(-6px)}
   var CV='Vimal-Naugain-Resume.pdf', dl=null;
   try{ Promise.resolve(window.claude&&window.claude.use?window.claude.use('downloads'):null).then(function(d){ dl=d||null; },function(){}); }catch(e){}
   makeMenu({id:'resumeMenu',triggers:[].slice.call(document.querySelectorAll('a[href="'+CV+'"]')),items:[
-    {icon:'view',label:'View resume',href:'resume.html',blank:true},
+    {icon:'view',label:'View resume',href:CV,blank:true},
     {icon:'down',label:'Download resume',run:function(){
       if(dl){ return fetch(CV).then(function(r){ if(!r.ok) throw 0; return r.blob(); }).then(function(b){ return dl.save({filename:CV,data:b}); }).then(function(){ return 'Saved'; },function(e){ if(e&&e.code==='declined') return false; window.open(CV,'_blank','noopener'); return false; }); }
       var a=document.createElement('a'); a.href=CV; a.download=CV; document.body.appendChild(a); a.click(); a.remove(); return 'Downloading';
