@@ -2834,6 +2834,16 @@ a.pj2:hover .pj2-media.card img{transform:rotate(-1deg) translateY(-6px)}
 .xp-body li a:hover{text-decoration-color:var(--ink)}
 @media (min-width:721px){.xp-body .xp-note{grid-column:1}}
 @media (max-width:720px){.xp-note{margin:0 0 8px}}
+
+/* Email menu: copy or open */
+#emailMenu{position:fixed;z-index:200;min-width:216px;padding:6px;border-radius:16px;background:#fffdf8;border:1px solid rgba(60,50,30,.16);box-shadow:0 22px 44px -22px rgba(30,25,10,.45),0 2px 6px rgba(30,25,10,.08);opacity:0;transform:translateY(-4px) scale(.98);transform-origin:top center;transition:opacity .16s ease,transform .2s cubic-bezier(.2,.8,.2,1)}
+#emailMenu.in{opacity:1;transform:none}
+#emailMenu[hidden]{display:none}
+#emailMenu button,#emailMenu a{display:flex;align-items:center;gap:12px;width:100%;min-height:44px;padding:0 14px;border:0;border-radius:11px;background:none;color:#1d1b16;font-size:.95rem;font-weight:600;line-height:1;font-family:inherit;text-align:left;text-decoration:none;cursor:pointer;transition:background .15s}
+#emailMenu button:hover,#emailMenu a:hover,#emailMenu button:focus-visible,#emailMenu a:focus-visible{background:#f1ead9;outline:none}
+#emailMenu svg{width:18px;height:18px;flex:none}
+#emailMenu button.ok{color:#1f6e40}
+@media (prefers-reduced-motion:reduce){#emailMenu{transition:none}}
 </style>
 
 <div class="page">
@@ -2848,7 +2858,7 @@ a.pj2:hover .pj2-media.card img{transform:rotate(-1deg) translateY(-6px)}
       <a class="icon" href="https://www.linkedin.com/in/vimalnaugain2/" target="_blank" rel="noopener" aria-label="LinkedIn">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm7 0h3.8v1.6h.06c.53-1 1.84-2.05 3.78-2.05 4.04 0 4.79 2.66 4.79 6.12v5.33h-4v-4.73c0-1.13-.02-2.58-1.57-2.58-1.58 0-1.82 1.23-1.82 2.5v4.81H10v-11Z"/></svg>
       </a>
-      <a class="icon" href="https://mail.google.com/mail/?view=cm&fs=1&to=vimalnaugain2@gmail.com" target="_blank" rel="noopener" aria-label="Email">
+      <a class="icon" id="emailIcon" href="mailto:vimalnaugain2@gmail.com" aria-label="Email" aria-haspopup="menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>
       </a>
     </nav>
@@ -2992,23 +3002,23 @@ a.pj2:hover .pj2-media.card img{transform:rotate(-1deg) translateY(-6px)}
       <div class="xp-list">
         <details class="xp-row" open>
           <summary><span class="xp-co">Airtel</span><span class="xp-role">Senior content designer</span><span class="xp-yr">2025 — now</span><span class="xp-plus" aria-hidden="true"></span></summary>
-          <div class="xp-body"><span class="xp-role-m">Senior content designer</span><p class="xp-note">Telecom. Content for the Airtel app and Engage X, Airtel’s CRM platform.</p><ul><li>Created Airtel’s <b>organisation-wide content design guidelines and guardrails</b>: voice, tone and writing standards for product and design teams</li><li>Write and manage product copy across the Airtel app, keeping microcopy clear, concise and consistent</li><li>Own messaging for Engage X, working with product and marketing teams on customer communication</li></ul></div>
+          <div class="xp-body"><span class="xp-role-m">Senior content designer</span><ul><li>Created Airtel’s <b>organisation-wide content design guidelines and guardrails</b> for voice, tone and writing standards</li><li>Raised recharges completed before pack expiry by <b>18%</b> and bill payments by <b>21%</b> with priority-led Next Best Action cards</li><li>Cut roaming-related customer care calls by <b>4%</b> and pack latching issues by <b>10%</b> with Travel Mode</li><li>Reworked how billing information is organised and explained, with a target of <b>20%</b> fewer billing-related calls</li></ul></div>
         </details>
         <details class="xp-row">
           <summary><span class="xp-co">Wiom</span><span class="xp-role">UX writer E2</span><span class="xp-yr">2023 — 25</span><span class="xp-plus" aria-hidden="true"></span></summary>
-          <div class="xp-body"><span class="xp-role-m">UX writer E2</span><p class="xp-note">Broadband. Content for the Wiom customer and partner apps.</p><ul><li>Raised Autopay adoption by <b>30%</b> in two months with an incremental-discount approach that showed long-term value</li><li>Cut booking cancellations by <b>10%</b> by letting users modify instead of cancel</li><li>Improved installation accuracy by <b>20%</b> with a step-by-step flow</li><li>Raised on-time task completion from <b>70% to 85%</b> in two months with a cricket-themed task experience</li><li>Partnered with Product, Design and Tech on major features for the customer and partner apps</li></ul></div>
+          <div class="xp-body"><span class="xp-role-m">UX writer E2</span><ul><li>Raised Autopay adoption by <b>30%</b> in two months with an incremental-discount approach that showed long-term value</li><li>Cut booking cancellations by <b>10%</b> by letting users modify instead of cancel</li><li>Improved installation accuracy by <b>20%</b> with a step-by-step flow</li><li>Raised on-time task completion from <b>70% to 85%</b> in two months with a cricket-themed task experience</li><li>Partnered with Product, Design and Tech on major features for the customer and partner apps</li></ul></div>
         </details>
         <details class="xp-row">
           <summary><span class="xp-co">Bijak</span><span class="xp-role">UX writer E1</span><span class="xp-yr">2021 — 22</span><span class="xp-plus" aria-hidden="true"></span></summary>
-          <div class="xp-body"><span class="xp-role-m">UX writer E1</span><p class="xp-note">Commodity trading app.</p><ul><li>Grew commodity trading by <b>15%</b> with a step-by-step market guide</li><li>Lifted DAU by <b>10%</b> with in-app stories</li><li>Designed a dynamic push notification system to improve engagement</li><li>Wrote SEO-optimised blogs for Bijak and ChargeERP, and helped revamp the ChargeERP website</li></ul></div>
+          <div class="xp-body"><span class="xp-role-m">UX writer E1</span><ul><li>Grew commodity trading by <b>15%</b> with a step-by-step market guide</li><li>Lifted DAU by <b>10%</b> with in-app stories</li><li>Designed a dynamic push notification system to improve engagement</li><li>Wrote SEO-optimised blogs for Bijak and ChargeERP, and helped revamp the ChargeERP website</li></ul></div>
         </details>
         <details class="xp-row">
           <summary><span class="xp-co">ByteDance · Helo</span><span class="xp-role">Community specialist</span><span class="xp-yr">2020 — 21</span><span class="xp-plus" aria-hidden="true"></span></summary>
-          <div class="xp-body"><span class="xp-role-m">Community specialist</span><p class="xp-note">Helo, ByteDance’s social app.</p><ul><li>Owned UX and content for the Helo app’s Hindi module</li><li>Grew official accounts to <b>1 lakh</b> likes with 300+ posts</li><li>Ran UGC campaigns with 500+ participants and 10,000+ interactions</li><li>Increased visibility for 20 journalists by managing their accounts</li></ul></div>
+          <div class="xp-body"><span class="xp-role-m">Community specialist</span><ul><li>Owned UX and content for the Helo app’s Hindi module</li><li>Grew official accounts to <b>1 lakh</b> likes with 300+ posts</li><li>Ran UGC campaigns with 500+ participants and 10,000+ interactions</li><li>Increased visibility for 20 journalists by managing their accounts</li></ul></div>
         </details>
         <details class="xp-row">
           <summary><span class="xp-co">Roar</span><span class="xp-role">Content writer</span><span class="xp-yr">2017 — 20</span><span class="xp-plus" aria-hidden="true"></span></summary>
-          <div class="xp-body"><span class="xp-role-m">Content writer</span><p class="xp-note">Digital media.</p><ul><li>Led a team of <b>35</b> writers reaching 10 lakh monthly views</li><li>Published 250+ research-driven pieces, raising average article views to 3,000</li><li>Created 30+ tech-focused articles and videos for the website and YouTube channel</li><li>Ran native advertising campaigns for MG Motors and Sun King</li><li>Raised ₹2 lakh for Kerala flood relief through a campaign</li><li>Planned and delivered content across five websites</li><li>Worked with the design team on the Roar India mobile app</li></ul></div>
+          <div class="xp-body"><span class="xp-role-m">Content writer</span><ul><li>Led a team of <b>35</b> writers reaching 10 lakh monthly views</li><li>Published 250+ research-driven pieces, raising average article views to 3,000</li><li>Created 30+ tech-focused articles and videos for the website and YouTube channel</li><li>Ran native advertising campaigns for MG Motors and Sun King</li><li>Raised ₹2 lakh for Kerala flood relief through a campaign</li><li>Planned and delivered content across five websites</li><li>Worked with the design team on the Roar India mobile app</li></ul></div>
         </details>
       </div>
     </section>
@@ -3035,9 +3045,9 @@ a.pj2:hover .pj2-media.card img{transform:rotate(-1deg) translateY(-6px)}
         <p class="avail">Delhi NCR · Hybrid or on-site</p>
       </div>
       <ul class="by-acts">
-        <li><a id="copy" href="https://mail.google.com/mail/?view=cm&fs=1&to=vimalnaugain2@gmail.com" target="_blank" rel="noopener"><span class="by-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg></span><span class="by-t"><b>Email</b><small id="email">vimalnaugain2@gmail.com</small></span><span class="by-go" aria-hidden="true">↗</span></a></li>
+        <li><a id="copy" href="mailto:vimalnaugain2@gmail.com" aria-haspopup="menu"><span class="by-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg></span><span class="by-t"><b>Email</b><small id="email">vimalnaugain2@gmail.com</small></span><span class="by-go" aria-hidden="true">↗</span></a></li>
         <li><a href="https://www.linkedin.com/in/vimalnaugain2/" target="_blank" rel="noopener"><span class="by-ic li"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.5 8.5h-3V20h3V8.5ZM5 3.5a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5ZM20.5 13.4c0-3-1.6-5.1-4.4-5.1-1.5 0-2.5.8-2.9 1.5V8.5h-3V20h3v-6c0-1.6.8-2.6 2.1-2.6 1.3 0 2.1.9 2.1 2.6v6h3.1v-6.6Z"/></svg></span><span class="by-t"><b>LinkedIn</b><small>in/vimalnaugain2</small></span><span class="by-go" aria-hidden="true">↗</span></a></li>
-        <li><a href="Vimal-Naugain-Resume.pdf" download="Vimal-Naugain-Resume.pdf"><span class="by-ic cv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg></span><span class="by-t"><b>Resume</b><small>PDF, one page</small></span><span class="by-go" aria-hidden="true">↓</span></a></li>
+        <li><a href="Vimal-Naugain-Resume.pdf" download="Vimal-Naugain-Resume.pdf"><span class="by-ic cv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg></span><span class="by-t"><b>Resume</b></span><span class="by-go" aria-hidden="true">↓</span></a></li>
       </ul>
       <svg class="cup" viewBox="0 0 90 90" aria-hidden="true"><g fill="none" stroke="#2b2925" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 38h46v20a20 20 0 0 1-20 20h-6a20 20 0 0 1-20-20Z"/><path d="M62 44h6a8 8 0 0 1 0 16h-7"/><path d="M10 82h58"/><path class="steam" d="M32 30c-4-5 4-8 0-14"/><path class="steam s2" d="M44 30c-4-5 4-8 0-14"/></g><ellipse cx="39" cy="40" rx="20" ry="2.6" fill="#5a4636"/></svg>
     </section>
@@ -4249,12 +4259,47 @@ a.pj2:hover .pj2-media.card img{transform:rotate(-1deg) translateY(-6px)}
   setTimeout(function(){step(0)},1800);
 })();
 (function(){
-  var b=document.getElementById('copy'), em=document.getElementById('email'), label=em.textContent;
-  b.addEventListener('click',function(){
-    var done=function(t){em.textContent=t;setTimeout(function(){em.textContent=label},1600)};
-    var fallback=function(){var r=document.createRange();r.selectNodeContents(document.getElementById('email'));var s=getSelection();s.removeAllRanges();s.addRange(r);done('Selected')};
-    try{navigator.clipboard.writeText('vimalnaugain2@gmail.com').then(function(){done('Copied')},fallback)}catch(e){fallback()}
+  /* Email: either email button opens a small menu with two choices, copy the address or open an email. */
+  var ADDR='vimalnaugain2@gmail.com', menu=document.createElement('div'), openFor=null, timer=null;
+  menu.id='emailMenu'; menu.setAttribute('role','menu'); menu.hidden=true;
+  menu.innerHTML='<button type="button" role="menuitem" data-a="copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 0 1 7.5 4H16"/></svg><span>Copy email address</span></button><a role="menuitem" data-a="open" href="mailto:'+ADDR+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg><span>Open email</span></a>';
+  document.body.appendChild(menu);
+  var copyBtn=menu.querySelector('[data-a="copy"]'), copyLbl=copyBtn.querySelector('span');
+  function place(t){
+    var r=t.getBoundingClientRect(), w=menu.offsetWidth, h=menu.offsetHeight, vw=document.documentElement.clientWidth, vh=window.innerHeight;
+    var x=Math.min(Math.max(12,r.left+r.width/2-w/2),vw-w-12);
+    var y=r.bottom+8; if(y+h>vh-12) y=Math.max(12,r.top-h-8);
+    menu.style.left=x+'px'; menu.style.top=y+'px';
+  }
+  function close(back){ if(menu.hidden) return; menu.classList.remove('in'); clearTimeout(timer); var t=openFor; openFor=null; if(t) t.setAttribute('aria-expanded','false'); setTimeout(function(){ if(!openFor) menu.hidden=true; },160); if(back&&t) t.focus(); }
+  function show(t){
+    if(openFor===t){ close(true); return; }
+    openFor=t; copyLbl.textContent='Copy email address'; copyBtn.classList.remove('ok');
+    menu.hidden=false; place(t); t.setAttribute('aria-expanded','true');
+    requestAnimationFrame(function(){ menu.classList.add('in'); }); copyBtn.focus({preventScroll:true});
+  }
+  [document.getElementById('emailIcon'),document.getElementById('copy')].forEach(function(t){
+    if(!t) return; t.setAttribute('aria-expanded','false');
+    t.addEventListener('click',function(ev){ ev.preventDefault(); show(t); });
   });
+  var label=document.getElementById('email'), orig=label?label.textContent:'';
+  function copied(ok){
+    copyBtn.classList.add('ok'); copyLbl.textContent=ok?'Copied':'Selected, press copy';
+    if(label){ label.textContent=ok?'Copied':orig; setTimeout(function(){ label.textContent=orig; },1600); }
+    timer=setTimeout(function(){ close(true); },ok?900:1800);
+  }
+  copyBtn.addEventListener('click',function(){
+    var fallback=function(){ try{ var r=document.createRange(); r.selectNodeContents(label||document.body); var sel=getSelection(); sel.removeAllRanges(); sel.addRange(r); }catch(e){} copied(false); };
+    try{ navigator.clipboard.writeText(ADDR).then(function(){ copied(true); },fallback); }catch(e){ fallback(); }
+  });
+  menu.querySelector('[data-a="open"]').addEventListener('click',function(){ setTimeout(function(){ close(false); },50); });
+  document.addEventListener('click',function(ev){ if(menu.hidden||menu.contains(ev.target)||(openFor&&openFor.contains(ev.target))) return; close(false); });
+  document.addEventListener('keydown',function(ev){ if(menu.hidden) return;
+    if(ev.key==='Escape'){ close(true); }
+    else if(ev.key==='ArrowDown'||ev.key==='ArrowUp'){ ev.preventDefault(); var it=[copyBtn,menu.querySelector('[data-a="open"]')], i=it.indexOf(document.activeElement); it[(i+(ev.key==='ArrowDown'?1:-1)+2)%2].focus(); } });
+  window.addEventListener('scroll',function(){ if(openFor) place(openFor); },{passive:true});
+  window.addEventListener('resize',function(){ if(openFor) place(openFor); });
+  window.addEventListener('hashchange',function(){ close(false); });
 })();
 </script>
 <script>
