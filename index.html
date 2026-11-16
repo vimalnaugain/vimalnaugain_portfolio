@@ -2844,6 +2844,17 @@ a.pj2:hover .pj2-media.card img{transform:rotate(-1deg) translateY(-6px)}
 .cta-menu svg{width:18px;height:18px;flex:none}
 .cta-menu button.ok{color:#1f6e40}
 @media (prefers-reduced-motion:reduce){.cta-menu{transition:none}}
+
+/* Tome */
+.xm.tome,.amark.tmark{background:#efeae0;color:#4b4a3f;font:700 1.25rem/1 var(--display)}
+.amark.tmark{background:#2b2a26;color:#f5efe4}
+#ai .xc.tm{--c:#4b4a3f}
+.xgrid .xc:last-child:nth-child(odd){grid-column:1/-1}
+.exp-grid .story:last-child:nth-child(odd){grid-column:1/-1}
+@media (min-width:640px){.exp-grid .story:last-child:nth-child(odd){flex-direction:column}}
+main.bs .bs-cap{margin-top:12px!important;font-size:.88rem!important;line-height:1.5!important;color:var(--b-mute)!important;max-width:44em}
+main.bs .bs-four+p,main.bs .bs-flow+p,main.bs .bs-phones+p,main.bs .bs-cap+p,main.bs .bs-callout+p,main.bs .bs-h3+p+p{margin-top:18px!important}
+main.bs .bs-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 </style>
 
 <div class="page">
@@ -2851,8 +2862,8 @@ a.pj2:hover .pj2-media.card img{transform:rotate(-1deg) translateY(-6px)}
 <header class="top">
     <span class="progress" id="progress" aria-hidden="true"></span>
     <a class="brand" href="#top" id="top"><span class="mono" aria-hidden="true">VN</span><span class="bn">Vimal Naugain</span></a>
-    <nav class="topnav" id="topnav" aria-label="Sections"><a href="#projects" data-view="projects">Projects</a><a href="#experiments" data-view="experiments">AI experiments</a><a href="#say-hi">Contact</a><a class="m-only" href="Vimal-Naugain-Resume.pdf" download="Vimal-Naugain-Resume.pdf">Resume</a></nav>
-    <a class="hdr-cv" href="Vimal-Naugain-Resume.pdf" download="Vimal-Naugain-Resume.pdf" title="Download resume (PDF)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Resume</a>
+    <nav class="topnav" id="topnav" aria-label="Sections"><a href="#projects" data-view="projects">Projects</a><a href="#experiments" data-view="experiments">AI experiments</a><a href="#say-hi">Contact</a><a class="m-only" href="Vimal-Naugain-Resume.pdf">Resume</a></nav>
+    <a class="hdr-cv" href="Vimal-Naugain-Resume.pdf" title="Download resume (PDF)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Resume</a>
     <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="topnav"><span aria-hidden="true"></span></button>
     <nav class="icons" aria-label="Find me elsewhere">
       <a class="icon" href="https://www.linkedin.com/in/vimalnaugain2/" target="_blank" rel="noopener" aria-label="LinkedIn">
@@ -2884,7 +2895,7 @@ a.pj2:hover .pj2-media.card img{transform:rotate(-1deg) translateY(-6px)}
             <p class="cv-sum">A content designer with <b>7+ years of experience</b> making complex digital experiences simple through content. Right now I’m at <b>Airtel</b>, simplifying life for millions of telecom users.</p>
           </div>
           <div class="cv-cta">
-            <a class="btn dark hero-cv cv-dl" href="Vimal-Naugain-Resume.pdf" download="Vimal-Naugain-Resume.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg> Download resume</a></div>
+            <a class="btn dark hero-cv cv-dl" href="Vimal-Naugain-Resume.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg> Download resume</a></div>
         </div>
       </figure>
     </section>
@@ -2984,6 +2995,15 @@ a.pj2:hover .pj2-media.card img{transform:rotate(-1deg) translateY(-6px)}
             <span class="kp-go">Explore ↗</span>
           </span>
         </a>
+        <a class="xc tm" href="#tome">
+          <span class="xm tome" aria-hidden="true">T</span>
+          <span class="xb">
+            <span class="xmeta">2026 · Kindle reader · Case study</span>
+            <span class="xt">Tome</span>
+            <span class="xd">A Kindle reader I built after Amazon put ads on my ad-free Kindle. Its recap feature reminds you where the story stands, without spoilers.</span>
+            <span class="kp-go">Read the case study →</span>
+          </span>
+        </a>
       </div>
     </section>
 
@@ -3047,7 +3067,7 @@ a.pj2:hover .pj2-media.card img{transform:rotate(-1deg) translateY(-6px)}
       <ul class="by-acts">
         <li><a id="copy" href="mailto:vimalnaugain2@gmail.com" aria-haspopup="menu"><span class="by-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg></span><span class="by-t"><b>Email</b><small id="email">vimalnaugain2@gmail.com</small></span><span class="by-go" aria-hidden="true">↗</span></a></li>
         <li><a href="https://www.linkedin.com/in/vimalnaugain2/" target="_blank" rel="noopener"><span class="by-ic li"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.5 8.5h-3V20h3V8.5ZM5 3.5a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5ZM20.5 13.4c0-3-1.6-5.1-4.4-5.1-1.5 0-2.5.8-2.9 1.5V8.5h-3V20h3v-6c0-1.6.8-2.6 2.1-2.6 1.3 0 2.1.9 2.1 2.6v6h3.1v-6.6Z"/></svg></span><span class="by-t"><b>LinkedIn</b><small>in/vimalnaugain2</small></span><span class="by-go" aria-hidden="true">↗</span></a></li>
-        <li><a href="Vimal-Naugain-Resume.pdf" download="Vimal-Naugain-Resume.pdf"><span class="by-ic cv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg></span><span class="by-t"><b>Resume</b></span><span class="by-go" aria-hidden="true">↓</span></a></li>
+        <li><a href="Vimal-Naugain-Resume.pdf"><span class="by-ic cv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg></span><span class="by-t"><b>Resume</b></span><span class="by-go" aria-hidden="true">↓</span></a></li>
       </ul>
       <svg class="cup" viewBox="0 0 90 90" aria-hidden="true"><g fill="none" stroke="#2b2925" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 38h46v20a20 20 0 0 1-20 20h-6a20 20 0 0 1-20-20Z"/><path d="M62 44h6a8 8 0 0 1 0 16h-7"/><path d="M10 82h58"/><path class="steam" d="M32 30c-4-5 4-8 0-14"/><path class="steam s2" d="M44 30c-4-5 4-8 0-14"/></g><ellipse cx="39" cy="40" rx="20" ry="2.6" fill="#5a4636"/></svg>
     </section>
@@ -3097,6 +3117,24 @@ a.pj2:hover .pj2-media.card img{transform:rotate(-1deg) translateY(-6px)}
         </ul>
         <a class="btn dark" href="https://claude.ai/artifact/1ey24uhjtnrPhnLhMaKn74" target="_blank" rel="noopener">Try MotoSOS ↗</a>
       </article>
+
+      <article class="story" id="tome-card" aria-labelledby="tome-card-title">
+        <div class="story-top">
+          <span class="amark tmark" aria-hidden="true">T</span>
+          <div>
+            <h3 id="tome-card-title">Tome</h3>
+            <p class="story-tag">A Kindle reader with a spoiler-free recap.</p>
+          </div>
+        </div>
+        <ul class="meta" aria-label="Project details"><li>2026</li><li>Kindle reader</li><li>AI recap</li></ul>
+        <p>Amazon started showing ads on my ad-free Kindle, so I removed the bloat and built a reader I can change myself. Its first feature is a recap for picking a book back up after a break.</p>
+        <ul class="points">
+          <li>Recap only ever sees what you’ve already read.</li>
+          <li>Long books are summarised once, chapter by chapter, then reused.</li>
+          <li>Home, library and display controls modelled on the Kindle’s own.</li>
+        </ul>
+        <a class="btn dark" href="#tome">Read the case study →</a>
+      </article>
     </div>
   </main>
 
@@ -3137,7 +3175,7 @@ a.pj2:hover .pj2-media.card img{transform:rotate(-1deg) translateY(-6px)}
     </section>
 
     <a class="pj-exp" href="#experiments">
-      <span><strong>Personal experiments with AI</strong>Adhikar and MotoSOS: working prototypes built to test content in a real flow.</span>
+      <span><strong>Personal experiments with AI</strong>Adhikar, MotoSOS and Tome: working prototypes built to test content in a real flow.</span>
       <span class="pj-go" aria-hidden="true">→</span>
     </a>
   </main>
@@ -4203,6 +4241,123 @@ a.pj2:hover .pj2-media.card img{transform:rotate(-1deg) translateY(-6px)}
     </nav>
   </main>
 
+  <main id="tome" class="bs" hidden aria-labelledby="tome-title">
+    <a class="back bs-back" href="#experiments">← AI experiments</a>
+
+    <header class="bs-hero">
+      <div class="bs-hero-in">
+        <div class="bs-hero-t">
+          <p class="bs-eyebrow">Case study</p>
+          <h1 class="bs-title bs-title-long" id="tome-title">Tome: a Kindle reader that remembers the story for you</h1>
+        </div>
+        <div class="bs-hero-art" aria-hidden="true">
+          <img src="cs8/tome-reader.jpg" alt="">
+          <img src="cs8/tome-recap.jpg" alt="">
+        </div>
+      </div>
+      <dl class="bs-facts">
+        <div><dt>Project</dt><dd>Tome, a custom Kindle reader</dd></div>
+        <div><dt>Role</dt><dd>Idea, UX and content</dd></div>
+        <div><dt>Team</dt><dd>Solo</dd></div>
+        <div><dt>Status</dt><dd>Live, open source</dd></div>
+      </dl>
+    </header>
+
+    <div class="bs-body">
+      <nav class="bs-toc" aria-label="Case study sections">
+        <ol>
+          <li><a href="#tome-01"><span>01</span>Why I built it</a></li>
+          <li><a href="#tome-02"><span>02</span>What Tome does</a></li>
+          <li><a href="#tome-03"><span>03</span>The recap</a></li>
+          <li><a href="#tome-04"><span>04</span>Keeping it spoiler-free</a></li>
+          <li><a href="#tome-05"><span>05</span>Where it stands</a></li>
+        </ol>
+      </nav>
+
+      <div class="bs-main">
+        <section class="bs-intro" aria-label="Overview">
+          <p>Amazon started showing ads on my Kindle, even though I’d bought the ad-free version sold in India.</p>
+          <p>So I removed the bloat and wrote my own reader. Tome is a small EPUB reader for jailbroken Kindles, and its first plugin is a spoiler-free recap for when you pick a book up after a break.</p>
+        </section>
+
+        <!-- 01 -->
+        <section class="bs-ch" id="tome-01" aria-labelledby="tome-01-h">
+          <header class="bs-ch-h"><span class="bs-n">01</span><h2 id="tome-01-h">Why I built it</h2></header>
+          <p class="bs-strong bs-lead">I paid for no ads, and still got ads.</p>
+          <p>The ad-free Kindle is meant to stay ad-free. Mine began showing ads anyway, so I debloated it. That solved the ads and left a gap: a reader I could change whenever something bothered me.</p>
+          <p class="bs-callout">Owning the reader means owning the details, from the sleep screen to the wording on every button.</p>
+        </section>
+
+        <!-- 02 -->
+        <section class="bs-ch" id="tome-02" aria-labelledby="tome-02-h">
+          <header class="bs-ch-h"><span class="bs-n">02</span><h2 id="tome-02-h">What Tome does</h2></header>
+          <p class="bs-strong bs-lead">The basics of a Kindle, without anything to sell.</p>
+          <ol class="bs-four">
+            <li><span>1</span><div><b>Home</b><p>The book you’re reading, with progress and time left, plus books finished this year, minutes read and days in a row.</p></div></li>
+            <li><span>2</span><div><b>Library</b><p>Every EPUB on the device as a cover grid. Filter by All, Reading, Finished or New.</p></div></li>
+            <li><span>3</span><div><b>Reading</b><p>Contents, italics and headings, and a thin progress bar with chapter marks. Tap it to switch what it shows.</p></div></li>
+            <li><span>4</span><div><b>Display (Aa)</b><p>Seven fonts, plus size, weight, spacing, margins and light. Changes apply while the panel stays open.</p></div></li>
+          </ol>
+          <p>When the Kindle sleeps, the cover of your book fills the screen. On a Kindle with ads, the Kindle draws its ad there instead.</p>
+          <div class="bs-phones">
+            <figure class="bs-zoom" tabindex="0"><img src="cs8/tome-home.jpg" alt="Tome home screen: Currently reading, nothing in progress; Your reading stats showing 0 finished in 2026, 0 min read this year, 0 days in a row; then Library (1 book), Settings and Exit Tome" loading="lazy"></figure>
+            <figure class="bs-zoom" tabindex="0"><img src="cs8/tome-library.jpg" alt="Tome library: a grid with one book cover, The Lighthouse at Gull’s Reach, marked New, with filters All, Reading, Finished and New and a Recent sort" loading="lazy"></figure>
+            <figure class="bs-zoom" tabindex="0"><img src="cs8/tome-display.jpg" alt="Display panel open over the page, with Text, Layout and Light tabs; seven font choices (Caladea selected), a size control showing 34 and weight options Regular, Bolder and Boldest" loading="lazy"></figure>
+          </div>
+          <p class="bs-cap">Tome’s home screen, library and display panel, shown with a test book.</p>
+        </section>
+
+        <!-- 03 -->
+        <section class="bs-ch" id="tome-03" aria-labelledby="tome-03-h">
+          <header class="bs-ch-h"><span class="bs-n">03</span><h2 id="tome-03-h">The recap</h2></header>
+          <p class="bs-strong bs-lead">Open the menu, tap Recap, and get back into the story.</p>
+          <p>Recap lives in the reader menu and gives three choices.</p>
+          <ol class="bs-flow">
+            <li class="on"><b>Last one</b><span>Reread the previous recap, without another request.</span></li>
+            <li class="on"><b>Quick</b><span>A refresher on the last few pages.</span></li>
+            <li class="on"><b>Full story</b><span>Everything up to the page you’re on.</span></li>
+          </ol>
+          <div class="bs-phones">
+            <figure class="bs-zoom" tabindex="0"><img src="cs8/tome-menu.jpg" alt="Reader menu with Contents, Recap, Display (Aa), Go to, Mark as finished and Home" loading="lazy"></figure>
+            <figure class="bs-zoom" tabindex="0"><img src="cs8/tome-recap-ask.jpg" alt="Recap dialog over the page: A spoiler-free reminder of the story up to this page. Quick covers the last few pages. Full story covers everything so far. Buttons: Quick and Full story" loading="lazy"></figure>
+            <figure class="bs-zoom" tabindex="0"><img src="cs8/tome-recap.jpg" alt="Recap result titled Story so far, 56%: The story so far, Where you left off and Characters to remember, page 1 of 2" loading="lazy"></figure>
+          </div>
+          <p class="bs-cap">The recap flow in the emulator. The recap text is a stand-in response, written to match the test book, not a live model answer.</p>
+          <p>Every full recap has the same shape: <b>The story so far</b>, <b>Where you left off</b>, <b>Characters to remember</b> and <b>Open threads</b>. A quick recap is shorter: <b>Previously</b>, <b>Where you left off</b> and <b>Who’s who</b>.</p>
+          <p class="bs-callout">Open threads lists the questions still unanswered, without guessing the answers.</p>
+          <p>If you reopen a book after a few days, Tome offers a quick recap on its own.</p>
+        </section>
+
+        <!-- 04 -->
+        <section class="bs-ch" id="tome-04" aria-labelledby="tome-04-h">
+          <header class="bs-ch-h"><span class="bs-n">04</span><h2 id="tome-04-h">Keeping it spoiler-free</h2></header>
+          <p class="bs-strong bs-lead">The model only sees what you’ve already read.</p>
+          <p>Nothing after the end of the current page is ever sent. On top of that, the instructions to the model set four rules:</p>
+          <ol class="bs-four">
+            <li><span>1</span><div><b>Use only the text given</b><p>Never use outside knowledge of the book, its sequels or adaptations.</p></div></li>
+            <li><span>2</span><div><b>Don’t look ahead</b><p>No hints, predictions or guesses about anything past where the reader stopped.</p></div></li>
+            <li><span>3</span><div><b>Write plainly</b><p>Plain, warm prose, with character names as the book uses them.</p></div></li>
+            <li><span>4</span><div><b>Keep the format simple</b><p>Short headings, short paragraphs and bullets. No tables.</p></div></li>
+          </ol>
+        </section>
+
+        <!-- 05 -->
+        <section class="bs-ch" id="tome-05" aria-labelledby="tome-05-h">
+          <header class="bs-ch-h"><span class="bs-n">05</span><h2 id="tome-05-h">Where it stands</h2></header>
+          <p class="bs-strong bs-lead">Live on my Kindle, free to use or fork.</p>
+          <p>I’ve tested Tome on my own Kindle. The code is open source under the MIT licence, so you can use it as it is or fork it and change what you like.</p>
+          <div class="bs-links"><a class="btn dark" href="https://github.com/vimalnaugain/tome" target="_blank" rel="noopener">View Tome on GitHub ↗</a></div>
+        </section>
+
+      </div>
+    </div>
+
+    <nav class="bs-nav" aria-label="Case study navigation">
+      <a class="btn light" href="#experiments">← AI experiments</a>
+      <a class="btn dark" href="#say-hi">Let’s connect</a>
+    </nav>
+  </main>
+
   <footer class="ft">
     <div class="ft-brand"><b>Vimal Naugain</b></div>
     <nav class="ft-nav" aria-label="Footer"><a href="#projects">Projects</a><a href="#experiments">AI experiments</a><a href="#experience">Experience</a><a href="#say-hi">Contact</a></nav>
@@ -4214,7 +4369,7 @@ a.pj2:hover .pj2-media.card img{transform:rotate(-1deg) translateY(-6px)}
 <script>
 (function(){
   // Simple hash routing: #experiments (and its stories) show the experiments view; anything else shows home.
-  var views=['home','experiments','projects','airtel-billing','airtel-nba','airtel-travel','wiom-tasks','wiom-autopay','wiom-install'];
+  var views=['home','experiments','projects','airtel-billing','airtel-nba','airtel-travel','wiom-tasks','wiom-autopay','wiom-install','tome'];
   var owner={experiments:'experiments',adhikar:'experiments',motosos:'experiments',projects:'projects','airtel-billing':'airtel-billing'};
   function route(){
     var h=(location.hash||'').slice(1), v=owner[h]||(function(){var el=h&&document.getElementById(h), m=el&&el.closest('main'); return m&&views.indexOf(m.id)>-1?m.id:'home';})();
