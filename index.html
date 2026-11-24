@@ -3006,9 +3006,9 @@ main.bs .bs-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
         <a class="xc tm" href="#tome">
           <span class="xm tome" aria-hidden="true">T</span>
           <span class="xb">
-            <span class="xmeta">2026 · Kindle reader · Case study</span>
+            <span class="xmeta">2026 · Kindle reader and dashboard · Case study</span>
             <span class="xt">Tome</span>
-            <span class="xd">A Kindle reader I built after Amazon put ads on my ad-free Kindle. Its recap feature reminds you where the story stands, without spoilers.</span>
+            <span class="xd">A Kindle reader I built after Amazon put ads on my ad-free Kindle, with a spoiler-free recap. Then Daily, a dashboard that turns the Kindle into a calm home screen for my day.</span>
             <span class="kp-go">Read the case study →</span>
           </span>
         </a>
@@ -3131,15 +3131,16 @@ main.bs .bs-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
           <span class="amark tmark" aria-hidden="true">T</span>
           <div>
             <h3 id="tome-card-title">Tome</h3>
-            <p class="story-tag">A Kindle reader with a spoiler-free recap.</p>
+            <p class="story-tag">A Kindle reader with a spoiler-free recap, and a dashboard for my day.</p>
           </div>
         </div>
-        <ul class="meta" aria-label="Project details"><li>2026</li><li>Kindle reader</li><li>AI recap</li></ul>
+        <ul class="meta" aria-label="Project details"><li>2026</li><li>Kindle reader</li><li>AI recap</li><li>Dashboard</li></ul>
         <p>Amazon started showing ads on my ad-free Kindle, so I removed the bloat and built a reader I can change myself. Its first feature is a recap for picking a book back up after a break.</p>
         <ul class="points">
           <li>Recap only ever sees what you’ve already read.</li>
           <li>Long books are summarised once, chapter by chapter, then reused.</li>
           <li>Home, library and display controls modelled on the Kindle’s own.</li>
+          <li>Daily: to-do, calendar, weather, long reads, a quote and news on one e-ink screen.</li>
         </ul>
         <a class="btn dark" href="#tome">Read the case study →</a>
       </article>
@@ -4246,15 +4247,15 @@ main.bs .bs-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
       <div class="bs-hero-in">
         <div class="bs-hero-t">
           <p class="bs-eyebrow">Case study</p>
-          <h1 class="bs-title bs-title-long" id="tome-title">Tome: a Kindle reader that remembers the story for you</h1>
+          <h1 class="bs-title bs-title-long" id="tome-title">Tome: a Kindle reader that remembers the story for you, and a dashboard for my day</h1>
         </div>
         <div class="bs-hero-art" aria-hidden="true">
-          <img src="cs8/tome-reader.jpg" alt="">
           <img src="cs8/tome-recap.jpg" alt="">
+          <img src="cs8/daily-home.jpg" alt="">
         </div>
       </div>
       <dl class="bs-facts">
-        <div><dt>Project</dt><dd>Tome, a custom Kindle reader</dd></div>
+        <div><dt>Project</dt><dd>Tome and Daily, custom Kindle apps</dd></div>
         <div><dt>Role</dt><dd>Idea, UX and content</dd></div>
         <div><dt>Team</dt><dd>Solo</dd></div>
         <div><dt>Status</dt><dd>Live, open source</dd></div>
@@ -4268,7 +4269,11 @@ main.bs .bs-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
           <li><a href="#tome-02"><span>02</span>What Tome does</a></li>
           <li><a href="#tome-03"><span>03</span>The recap</a></li>
           <li><a href="#tome-04"><span>04</span>Keeping it spoiler-free</a></li>
-          <li><a href="#tome-05"><span>05</span>Where it stands</a></li>
+          <li><a href="#tome-05"><span>05</span>More than a reader</a></li>
+          <li><a href="#tome-06"><span>06</span>Today: the productive half</a></li>
+          <li><a href="#tome-07"><span>07</span>Reading: picked each morning</a></li>
+          <li><a href="#tome-08"><span>08</span>How Daily works</a></li>
+          <li><a href="#tome-09"><span>09</span>Where it stands</a></li>
         </ol>
       </nav>
 
@@ -4276,6 +4281,7 @@ main.bs .bs-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
         <section class="bs-intro" aria-label="Overview">
           <p>Amazon started showing ads on my Kindle, even though I’d bought the ad-free version sold in India.</p>
           <p>So I removed the bloat and wrote my own reader. Tome is a small EPUB reader for jailbroken Kindles, and its first plugin is a spoiler-free recap for when you pick a book up after a break.</p>
+          <p>Then I wanted the Kindle to do more than hold books. Daily, built on Tome’s engine, turns it into a calm home screen for my day: to-dos, calendar and weather on top, and something good to read below.</p>
         </section>
 
         <!-- 01 -->
@@ -4341,10 +4347,70 @@ main.bs .bs-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 
         <!-- 05 -->
         <section class="bs-ch" id="tome-05" aria-labelledby="tome-05-h">
-          <header class="bs-ch-h"><span class="bs-n">05</span><h2 id="tome-05-h">Where it stands</h2></header>
-          <p class="bs-strong bs-lead">Live on my Kindle, free to use or fork.</p>
-          <p>I’ve tested Tome on my own Kindle. The code is open source under the MIT licence, so you can use it as it is or fork it and change what you like.</p>
-          <div class="bs-links"><a class="btn dark" href="https://github.com/vimalnaugain/tome" target="_blank" rel="noopener">View Tome on GitHub ↗</a></div>
+          <header class="bs-ch-h"><span class="bs-n">05</span><h2 id="tome-05-h">More than a reader</h2></header>
+          <p class="bs-strong bs-lead">My Kindle sat on the desk all day, showing an ad or a blank screen.</p>
+          <p>E-ink is easy on the eyes, needs no glow and lasts for weeks on a charge. That makes it a good place for the things I check every morning, without opening my phone and getting pulled into it.</p>
+          <p>So I built Daily: a second app on Tome’s engine that opens to a dashboard instead of a library. It works with no accounts, subscriptions or paid APIs.</p>
+          <p class="bs-callout">One glance, no notifications, nothing trying to keep me there.</p>
+        </section>
+
+        <!-- 06 -->
+        <section class="bs-ch" id="tome-06" aria-labelledby="tome-06-h">
+          <header class="bs-ch-h"><span class="bs-n">06</span><h2 id="tome-06-h">Today: the productive half</h2></header>
+          <p class="bs-strong bs-lead">The top half of the screen is about getting the day done.</p>
+          <ol class="bs-four">
+            <li><span>1</span><div><b>Clock and date</b><p>The time, the date, and how far I am through the day, the month and the year.</p></div></li>
+            <li><span>2</span><div><b>Weather</b><p>Temperature, feels-like, highs and lows, when rain is likely, and Delhi’s air quality.</p></div></li>
+            <li><span>3</span><div><b>To-do</b><p>Add items on the Kindle’s keyboard, or send them to my own Telegram bot from my phone. Tap to tick them off.</p></div></li>
+            <li><span>4</span><div><b>Calendar</b><p>The month with busy days marked, and my next meetings, read from Google Calendar’s private link.</p></div></li>
+          </ol>
+          <div class="bs-phones">
+            <figure class="bs-zoom" tabindex="0"><img src="cs8/daily-home.jpg" alt="Daily home screen. Today: the time 2:12 PM, Tuesday 24 November 2026; 26° and partly cloudy with AQI 212; a to-do list with five items; the November calendar with today circled and meetings at 4:30 PM and 7:30 PM. Reading: two long reads, a quote from The Great Gatsby and news headlines for Top, Tech and Delhi" loading="lazy"></figure>
+            <figure class="bs-zoom" tabindex="0"><img src="cs8/daily-todo-add.jpg" alt="Add to-do screen with an on-screen keyboard. The text reads Pay electricity bill tomorrow, with Today and Tomorrow buttons and an Add button" loading="lazy"></figure>
+            <figure class="bs-zoom" tabindex="0"><img src="cs8/daily-sleep.jpg" alt="Sleep screen: the same dashboard with the date, 24, in place of the clock, and the footer reading Asleep, updated 2:12 PM" loading="lazy"></figure>
+          </div>
+          <p class="bs-cap">The home screen, adding a to-do, and the sleep screen. Sample to-dos and calendar; the reading cards show a real morning edition.</p>
+          <p>Typing “call bank tomorrow” sets the day on its own. When the Kindle sleeps, the dashboard stays on the screen, so it still works as a glance at the desk.</p>
+        </section>
+
+        <!-- 07 -->
+        <section class="bs-ch" id="tome-07" aria-labelledby="tome-07-h">
+          <header class="bs-ch-h"><span class="bs-n">07</span><h2 id="tome-07-h">Reading: picked each morning</h2></header>
+          <p class="bs-strong bs-lead">The bottom half gives me something good to read, not an endless feed.</p>
+          <ol class="bs-flow">
+            <li class="on"><b>Long reads</b><span>At least five unread essays at a time, from Aeon, Psyche, The Marginalian, Longreads, Read Something Great’s picks and Wikipedia’s featured article. New ones arrive every morning.</span></li>
+            <li class="on"><b>Quote of the day</b><span>A passage from a classic on Project Gutenberg, chosen to read well on its own.</span></li>
+            <li class="on"><b>News</b><span>Nothing until I pick topics. Then every story from those topics, with the full article where the site allows it.</span></li>
+          </ol>
+          <div class="bs-phones">
+            <figure class="bs-zoom" tabindex="0"><img src="cs8/daily-read.jpg" alt="A long read open in the reader: Getting the Goalpost to Stop Moving, collaborativefund.com, 12 min read, page 1 of 20" loading="lazy"></figure>
+            <figure class="bs-zoom" tabindex="0"><img src="cs8/daily-markread.jpg" alt="The last page of a long read: a QR code to read the original on a phone, a Mark as read button, and the next read, A colossal oscillation" loading="lazy"></figure>
+            <figure class="bs-zoom" tabindex="0"><img src="cs8/daily-topics.jpg" alt="News topics list with checkboxes: Top stories and Technology ticked; Business, Science, Health, Sports, Entertainment, New in AI and Content Design unticked, each with the number of stories today" loading="lazy"></figure>
+          </div>
+          <p class="bs-cap">A long read, its last page with Mark as read, and the news topics list.</p>
+          <p>Marking a piece as read hides it, and the next one takes its place. The last page of every article has a QR code, so I can open the original on my phone.</p>
+          <p class="bs-callout">I wanted it to feel like a morning paper that knows when to stop.</p>
+        </section>
+
+        <!-- 08 -->
+        <section class="bs-ch" id="tome-08" aria-labelledby="tome-08-h">
+          <header class="bs-ch-h"><span class="bs-n">08</span><h2 id="tome-08-h">How Daily works</h2></header>
+          <p class="bs-strong bs-lead">The heavy lifting happens in the cloud, so the Kindle only has to show it.</p>
+          <ol class="bs-four">
+            <li><span>1</span><div><b>A morning edition</b><p>At 5:17 every morning, a free GitHub job gathers the news, picks the best stories without AI and pulls out the full text of each article.</p></div></li>
+            <li><span>2</span><div><b>Ranked by coverage</b><p>A story carried by several outlets ranks higher. Duplicates are merged and clickbait is filtered out.</p></div></li>
+            <li><span>3</span><div><b>Private things stay private</b><p>My calendar link, Telegram bot, to-dos and what I’ve read never leave the Kindle. Only the public edition is published online.</p></div></li>
+            <li><span>4</span><div><b>Easy to install, updates itself</b><p>Copy a folder onto the Kindle, then search for Daily. New versions download and install themselves.</p></div></li>
+          </ol>
+          <p>Everything is free: news feeds, Open-Meteo for weather, Wikipedia, Project Gutenberg and a Telegram bot. It works offline from its last download.</p>
+        </section>
+
+        <!-- 09 -->
+        <section class="bs-ch" id="tome-09" aria-labelledby="tome-09-h">
+          <header class="bs-ch-h"><span class="bs-n">09</span><h2 id="tome-09-h">Where it stands</h2></header>
+          <p class="bs-strong bs-lead">Both live on my Kindle, free to use or fork.</p>
+          <p>I use Tome for books and Daily as my morning screen. The code is open source, so you can use either as it is or fork it and change what you like.</p>
+          <div class="bs-links"><a class="btn dark" href="https://github.com/vimalnaugain/tome" target="_blank" rel="noopener">View Tome on GitHub ↗</a> <a class="btn dark" href="https://github.com/vimalnaugain/kindle-daily" target="_blank" rel="noopener">View Daily on GitHub ↗</a></div>
         </section>
 
       </div>
